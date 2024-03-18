@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale-1.0">
+        <title>App de Estudos</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        
+        <article class="back-tela-funcionamento">
+            <div class="container-tela">
+                <section class="tela-funcionamento">
+                    <h2>MANUAL DE USO</h2><br>
+                    <h4>Opções habilitadas para cada tipo de usuário:</h4><br>
+                    <h3>Administrador:</h3>
+                    <ul>
+                        <p>Acessar todas as áreas</p>
+                        <p>Adicionar conteúdo</p>
+                        <p>Responder as dúvidas</p>
+                        <p>Realizar perguntas</p>
+                    </ul><br>
+                    <h3>Professor:</h3>
+                    <ul>
+                        <p>Acessar todas as áreas</p>
+                        <p>Adicionar conteúdo</p>
+                        <p>Alterar sua senha</p>
+                        <p>Realizar perguntas</p>
+                    </ul><br>
+                    <h3>Aluno:</h3>
+                    <ul>
+                        <p>Acessar todas as áreas EXCETO a de professores</p>
+                        <p>Alterar sua senha</p>
+                        <p>Realizar perguntas</p>
+                    </ul><br>
+    
+                    <h3>Dados de login de ADMINISTRADOR</h3>
+                    <p>email: emailteste@gmail.com</p>
+                    <p>senha: senhateste</p><br><br>
+
+                    <h5>Este manual estará disponível novamente na área superior direita da seção de dúvidas!</h5>
+
+                    <button class="button_d button-manual" onclick="sair_manual()">OK</button>
+                </section><!--tela-funcionamento-->
+            </div><!--container-tela-->
+        </article><!--back-tela-funcionamento-->
+
+
+        <!--Tela de alert, esta é uma alternativa ao alert do js, utitlizada simplesmente como uma personalização-->
+    
+        <article class="fundo-tela-de-alert">
+            <div class="tela-de-alert">
+                <img src="imagens/atencao.png" alt="" class="alert-atencao">
+                <img src="imagens/verificado.png" alt="" class="alert-verificado">
+                <h2 class="titulo-alert">Oops...</h2>
+                <p class="texto-alert">VOCE ESTA ERRADO</p>
+                <button class="confirmar-alert" onclick="alert()">OK</button>
+            </div><!--tela-de-alert-->
+        </article><!--fundo-tela-de-alert-->
+    
+    
+        <!--background-home é a tela principal com todas as suas funções-->
+    
+        <article class="background-home">
+
+            <header class="header-home"><h2>AULAS GRATUITAS DE ENSINO</h2></header><!--header-home-->
+
+            <section class="container-perfil">
+                <div class="perfil">
+                    <button class="imagem-perfil" onclick="perfil()"></button>
+                    <button class="nome-perfil" onclick="perfil()">Bruno Rafael</button>
+                </div><!--perfil-->
+                <div class="opcoes-perfil">
+                    <button class="sair_perfil" onclick="sair_perfil()">Sair</button>
+                    <button class="dados_perfil" onclick="senha_perfil()">Alterar senha</button>
+                    <button class="voltar-perfil" onclick="voltar()"><img src="imagens/x.png" alt=""></button> <!--BOTAO DE VOLTAR-->
+                </div><!--opcoes-perfil-->
+            </section><!--container-perfil-->
+    
+            <section class="alterar-senha"> <!--box para alteração da senha de login-->
+                <div class="alert-senha"> <!--alert personalizado exclusivamente para a alteração da senha-->
+                    <img src="imagens/atencao.png" alt="">
+                    <h2>REALMENTE DESEJA ALTERAR SUA SENHA? </h2>
+                    <div class="confirmar">
+                        <button class="confirmar-alert" onclick="cancelar_alert()">CANCELAR</button>
+                        <button class="confirmar-alert" onclick="confirmar_alert()">CONFIRMAR</button>
+                    </div><!--confirmar-->             
+                </div><!--alert-senha-->
+    
+                <div class="box-alterar-senha">
+                    <button class="voltar" onclick="voltar()"><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->               
+                    <div class="header-senha">Alterar senha</div>
+                    <div class="main-alterar-senha">
+                        <input type="password" id="confirmar-para-alterar" placeholder="Confirme sua senha">
+                        <input type="password" id="nova-senha" placeholder="Nova senha">
+                        <input type="password" id="confirmar-nova-senha" placeholder="Confirme a nova senha">
+                        <input type="button" onclick="confirmar_alterar();" value="Confirmar">
+                    </div><!--main-alterar-senha-->
+                </div><!--box-alterar-senha-->
+            </section><!--alterar-senha-->
+    
+            <!-- -------------------desktop-------------------- -->
+            
+            <!--conteudo da pagina principal responsiva destinada ao desktop-->
+    
+            <section class="main-home">
+                <div class="box-home ">
+                    <button class="imagem-box-home imagem-professor" onclick="professor()"></button><!--imagem-box-home-->
+                    <button class="texto-box-home" onclick="professor()">
+                        PROFESSOR(A)
+                    </button><!--texto-box-home-->
+                </div><!--box-home imagem-professor-->
+    
+                <div class="box-home" >
+                    <button class="imagem-box-home imagem-aluno" onclick="aluno()"></button><!--imagem-box-home-->
+                    <button class="texto-box-home" onclick="aluno()">
+                        ALUNO(A)
+                    </button><!--texto-box-home-->
+                </div><!--box-home imagem-aluno-->
+    
+                <div class="box-home">
+                    <button class="imagem-box-home imagem-duvidas" onclick="duvidas()"></button><!--imagem-box-home--> 
+                    <button class="texto-box-home" onclick="duvidas()">
+                        DÚVIDAS
+                    </button><!--texto-box-home-->
+                </div><!--box-home imagem-duvidas-->
+    
+                <div class="box-home">
+                    <button class="imagem-box-home imagem-redes" onclick="redes()"></button><!--imagem-box-home-->
+                    <button class="texto-box-home" onclick="redes()">
+                        REDES SOCIAIS
+                    </button><!--texto-box-home-->  
+                </div><!--box-home imagem-redes-->
+            </section><!--main-home-->
+    
+            <!-- -------------------tablet-------------------- -->
+    
+            <!--conteudo da pagina principal responsiva destinada ao tablet ou tela medianas-->
+    
+            <section class="main-home-tablet">
+                <div class="container-tablet1">
+                    <div class="box-home ">
+                        <button class="imagem-box-home imagem-professor" onclick="professor()"></button><!--imagem-box-home-->
+                        <button class="texto-box-home" onclick="professor()">
+                            PROFESSOR(A)
+                        </button><!--texto-box-home-->
+                    </div><!--box-home imagem-professor-->
+    
+                    <div class="box-home" >
+                        <button class="imagem-box-home imagem-aluno" onclick="aluno()"></button><!--imagem-box-home-->
+                        <button class="texto-box-home" onclick="aluno()">
+                            ALUNO(A)
+                        </button><!--texto-box-home-->
+                    </div><!--box-home imagem-aluno-->
+                </div><!--container-tablet1-->
+    
+                <div class="container-tablet2">
+                    <div class="box-home">
+                        <button class="imagem-box-home imagem-duvidas" onclick="duvidas()"></button><!--imagem-box-home--> 
+                        <button class="texto-box-home" onclick="duvidas()">
+                            DÚVIDAS
+                        </button><!--texto-box-home-->
+                    </div><!--box-home imagem-duvidas-->
+    
+                    <div class="box-home">
+                        <button class="imagem-box-home imagem-redes" onclick="redes()"></button><!--imagem-box-home-->
+                        <button class="texto-box-home" onclick="redes()">
+                            REDES SOCIAIS
+                        </button><!--texto-box-home-->  
+                    </div><!--box-home imagem-redes-->
+                </div><!--container-tablet2-->
+            </section><!--main-home-tablet-->
+
+            <div class="login">
+                <button class="logar button_d" onclick="logar()"><span>LOGIN</span></button>
+                <button class="cadastrar button_d" onclick="cadastrar()"><span>CADASTRAR</span></button>
+            </div><!--login-->
+    
+            <footer class="creditos">Desenvolvido por Bruno Rafael</footer><!--creditos-->
+        </article><!--background-home-->
+    
+        <!-- ------------------TELA DE LOGIN-------------------- -->
+    
+        <article class="tela-de-login">
+            <div class="box-form-login">
+                <button class="voltar" onclick="voltar()"><img src="imagens/voltar.png" alt=""></button> <!--BOTAO DE VOLTAR-->
+
+                <form class="box-login">
+                    <div class="titulo"><h2>TELA DE LOGIN</h2></div>
+        
+                    <div class="inputs-login">
+                        <input type="email" id="email" placeholder="Digite seu email">
+                        <input type="password"  id="password" placeholder="Digite sua senha">
+                    </div>
+
+                    <input type="button" id="enviar" value="Enviar" onclick="enviar_login()">
+                </form><!--box-login-->
+                
+                <p class="ja-possui-conta">Novo por aqui? <button onclick="cadastrar()" class="cadastre-se">Cadastre-se</button></p>
+            </div><!--box-form-login-->
+        </article><!--tela de login-->
+    
+        <!-- ------------------TELA DE CADASTRO-------------------- -->
+    
+        <article class="tela-de-cadastro">
+            <div class="box-form-cadastro">
+
+                <button class="voltar" onclick="voltar()"><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->
+
+                <form class="box-cadastro">
+                    <header class="titulo"><h2>TELA DE CADASTRO</h2></header>                    
+                    <div class="inputs-login">
+                        <input type="text" id="name-id" placeholder="Nome" maxlength="12" required>
+                        <input type="email" id="email-cadastro" placeholder="Email" required>
+                        <input type="password"  id="password-cadastro" placeholder="Senha" required>
+                        <input type="password"  id="password-confirmar" placeholder="Confirme sua senha" required>
+                        
+                        <div class="situacao"> <!--ESCOLHER PROFESSOR OU ALUNO-->
+                            <div class="box-situacao">
+                                <input type="radio" name="alunoprofessor" id="aluno" value="aluno">
+                                <label for="aluno">Aluno</label>
+                            </div><!--box-situacao1-->
+            
+                            <div class="box-situacao">
+                                <input type="radio" name="alunoprofessor" id="professor" value="professor">
+                                <label for="professor">Professor</label>
+                            </div><!--box-situacao2-->        
+                        </div><!--situacao -->
+                    </div><!--inputs-login-->
+        
+                    <input type="button" id="enviar-cadastro" value="Enviar" onclick="enviar_cadastro()">
+                </form><!--box-cadastro-->
+
+                <p class="ja-possui-conta">Já possui uma conta? <button onclick="logar()" class="cadastre-se">Entrar</button></p>
+            </div><!--box-form-cadastro-->
+        </article><!--tela de cadastro-->
+    
+        
+        <!-- -------------------matérias-------------------- -->
+    
+        <article class="background-materia">
+            <button class="voltar-materias" onclick="voltar()"><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->
+    
+            <header class="header-materias"><h2>Matérias</h2></header><!--header-materias-->
+    
+            <section class="main-materias">
+                <div class="grade-materias">
+                    <button class="container-materia"><div class="card"><div class="materia-portugues card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-matematica card_content"></div></div></button>
+                    <button class="container-materia" ><div class="card"><div class="materia-biologia card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-fisica card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-quimica card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-filosofia card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-ingles card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-espanhol card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-geografia card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-historia card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-sociologia card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-ed-fisica card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-artes card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-literatura card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-programacao card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-photoshop card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-meio-ambiente card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-ed-financeira card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-redacao card_content"></div></div></button>
+                    <button class="container-materia"><div class="card"><div class="materia-enem card_content"></div></div></button>              
+                </div><!--grade-materias-->      
+            </section><!--main-materias-->
+    
+            <footer class="footer-materias">Desenvolvido por Bruno Rafael</footer>
+        </article><!--background-materia-->
+    
+        <article class="background-conteudo-materias">
+            <h2 class="titulo-background-conteudo-materias"></h2>
+    
+            <div class="background-conteudo-materia"></div>
+    
+            <button class="voltar-materias" onclick="voltar_materias()" ><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->
+              
+            <button class="criar criars" onclick="criar()"><p>Adicionar</p></button>
+    
+            <section class="adicionar-conteudo">
+                <div class="inputs-adicionar-conteudo">
+                    <input type="text" id="titulo" placeholder="Titulo" maxlength="50">
+                    <input type="text" id="sinopse" maxlength="360" placeholder="Sinopse">
+                    <textarea name="cont" id="cont" cols="45" rows="25" placeholder="Digite somente o conteúdo"></textarea>
+                    <div class="buttons-conteudo">
+                        <button class="adicionar" onclick="voltar_conteudo()" style="background-color: gray;"><p>Cancelar</p></button>
+                        <button class="adicionar" onclick="adicionar()">Adicionar</button>
+                    </div>
+                </div><!--inputs-adicionar-conteudo--> 
+            </section><!--adicionar-conteudo-->
+        </article><!--background-conteudo-materia-->   
+
+        <article class="tela-conteudo">
+            <button class="voltar-materias" onclick="voltar_conteudo()" ><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->
+            <h2 class="titulo-tela-conteudo"></h2>
+            <h4 class="sinopse-tela-conteudo"></h3>
+            <p class="texto-tela-conteudo"></p>
+        </article><!--tela-conteudo-->
+    
+    
+        <!-- -------------------tela de duvidas---------------------- -->
+    
+        <article class="back-alert-duvidas">
+            <div class="alert-duvida">
+                <textarea  id="pergunta_duvida" cols="45" rows="7" style="resize: none; padding: 10px; border-radius: 5px; margin: 20px 0;" placeholder="Digite sua pergunta:"></textarea>
+                <p class="pergunta-de-duvida" style="display: none; word-wrap: break-word; width: 90%; text-align:center;margin: 10px auto"></p>
+                <textarea  id="resposta_duvida" cols="45" rows="7" style="resize: none; padding: 10px; border-radius: 5px; margin: 20px 0; display: none;" placeholder="Digite sua resposta:"></textarea>
+                
+                <div class="confirmar">
+                    <button class="confirmar-alert" onclick="cancelar_alert_duvida()">CANCELAR</button>
+                    <button class="confirmar-alert alert-pergunta" onclick="confirmar_alert_duvida()">CONFIRMAR</button>
+                    <button class="confirmar-alert alert-resposta" onclick="confirmar_alert_duvida_resposta()" style="display:none">CONFIRMAR</button>
+                </div><!--confirmar-->             
+            </div><!--alert-duvida-->
+        </article><!--back-alert-duvidas-->
+
+        <article class="background-duvidas">    
+            <button class="button_d button-manual btn-duvidas" onclick="entrar_manual()">?</button>
+
+            <button class="voltar-materias" onclick="voltar()"><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->
+    
+            <header class="header-duvidas">DÚVIDAS FREQUENTES</header>
+            <div class="back-duvidas">
+                <div class="container-duvidas">
+                    <button class="perguntas">bdfuhsdiodfjisd?</button>
+                    <div class="respostas">hnciosndfv</div>
+                </div><!--container-duvidas-->
+            </div><!--back-duvidas-->
+            <div class="perguntas-button">
+                <button class="criar_pergunta" onclick="criar_perguntas()"><p>Perguntar !</p></button>
+
+                <button class="responder_pergunta" onclick="responder_perguntas()"><p>Responder !</p></button>
+            </div><!--perguntas-button-->
+        </article><!--background-duvidas-->
+    
+        <article class="background-redes">
+            <button class="voltar-redes" onclick="voltar()"><img src="imagens/voltar.png" alt=""></button><!--BOTAO VOLTAR-->
+    
+            <header class="header-redes">REDES SOCIAIS</header>
+    
+            <div class="redes-primarias">
+                <a href="https://www.instagram.com" target="_blank"><button><img src="imagens/instagram.png" alt="">@ade_exemplo</button></a>
+    
+                <a href="https://whatsapp.com" target="_blank"><button><img src="imagens/whatsapp.png" alt="">@ade_exemplo</button></a>
+    
+                <a href="https://www.facebook.com" target="_blank"><button><img src="imagens/facebook.png" alt="">@ade_exemplo</button></a>
+    
+                <a href="https://twitter.com" target="_blank"><button><img src="imagens/twitter.png" alt="">@ade_exemplo</button></a>
+    
+            </div><!--redes-primarias-->
+            <div class="redes-secudarias">
+                <a href="https://br.pinterest.com" target="_blank"><button><img src="imagens/pinterest.png" alt="">@ade_exemplo</button></a>
+    
+                <a href="https://linkedin.com" target="_blank"><button><img src="imagens/linkedin.png" alt="">@ade_exemplo</button></a>
+    
+                <a href="https://snapchat.com" target="_blank"><button><img src="imagens/snapchat.png" alt="">@ade_exemplo</button></a>
+    
+                
+                <a href="https://www.youtube.com" target="_blank"><button><img src="imagens/youtube.png" alt="">@ade_exemplo</button></a>  
+            </div><!--redes-secudarias-->
+        </article><!--background-redes-->
+        
+        <script src="ade.js"></script>
+    
+    </body>
+</html>
